@@ -1,7 +1,0 @@
-<!--index.wxml-->
-<view class="container">
-<image src="{{fileSrc}}"></image>
-  <view bindtap="uploadfile">上传图片</view>
-  <!-- <view bindtap="btnRun1">点击调用wasm方法</view> -->
-  <!-- {{test_result1}} -->
-</view>

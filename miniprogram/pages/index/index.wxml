@@ -1,0 +1,59 @@
+<!--pages/index/index.wxml-->
+<view class="box">
+    <view class="bg_img">
+      <view class="img_box">
+        <image class="img" src="{{loading_img?loading_img:'../../images/loading.gif'}}"></image>
+      </view>
+      <view class="slogan">
+        <view class="upload_bg_img" style="background-image:url({{upload_bg_url}})">
+          <view class="upload" bindtap="uploadfile">
+            上传图片
+          </view>
+        </view>
+        <view class="kou_hao">
+          <text class="title">无需联网的图片压缩</text>
+          <view class="name">🐰</view>
+        </view>
+      </view>
+      <text class="tip">
+        图片压缩完成✅之后，会自动保存到您的相册中，我们推荐您图片大于1M在进行压缩
+      </text>
+      <!-- <view class="upload" bindtap="showDialog">
+            213123
+      </view> -->
+    </view>
+    <dialog wx:if="{{dialogvisible}}"
+    headerFontSize="{{'20rpx'}}"
+    title="{{inputs[0].value}}"
+    opacity="{{opacity}}"
+    animation="{{switchs[0].value}}"
+    width="{{inputs[1].value}}"
+    closeOnClickModal="{{switchs[1].value}}"
+    loading="{{switchs[2].value}}"
+    gather-form-id="{{switchs[3].value}}"
+    show-confirm="{{buttonConf[0].show}}"
+    showConfirm="{{false}}"
+    showCancel="{{false}}"
+    confirm-text="{{buttonConf[0].text}}"
+    confirm-color="{{buttonConf[0].color}}"
+    confirm-background-color="{{buttonConf[0].background}}"
+    confirm-open-type="{{buttonConf[0].openType}}"
+    show-cancel="{{buttonConf[1].show}}"
+    cancel-text="{{buttonConf[1].text}}"
+    cancel-color="{{buttonConf[1].color}}"
+    cancel-background-color="{{buttonConf[1].background}}"
+    cancel-open-type="{{buttonConf[1].openType}}"
+    bindclose="closeDialog"
+    bindcancel="cancel"
+    bindconfirm="confirm"
+    bindgetFormId="getFormId"
+    bindgetuserinfo="getUserInfo"
+    bindcontact="contact"
+    bindgetphonenumber="getphonenumber"
+    bindopensetting="openSetting"
+    bindlaunchapp="launchApp" >
+    <view class="dialog_box" style='height:200rpx;text-align: center;'>
+      <image class="dialog_img" class="img" src='../../images/loading.gif'></image>
+    </view>
+  </dialog>
+</view>

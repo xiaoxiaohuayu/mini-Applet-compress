@@ -1,0 +1,87 @@
+/* pages/index/index.wxss */
+.bg_img{
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.img_box{
+  height: 240px;
+}
+.upload_bg_img{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content:center;
+  width: 90%;
+  height: 200px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  /* background-position: 29rpx 0px; */
+  background-size: 100% 100%;
+  /* border: 1px solid #090909; */
+  /* box-shadow: 6px 6px 12px #b3c1ff; */
+  box-shadow: 0 0 12px #b3c1ff;
+  border-radius:26px;
+  overflow: hidden;
+}
+.slogan{
+  display: block;
+  padding-top: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* height: 40px; */
+}
+.kou_hao{
+  margin-top: 40px;
+}
+.kou_hao .title{
+  font-family: system-ui;
+  color: #4f6ce9;
+}
+
+.slogan>.name{
+  font-family: monospace;
+}
+.img{
+  padding:0 5% 0 5%;
+  height: 100%;
+}
+/* From uiverse.io by @adamgiebl */
+.upload {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin: 0 auto;
+  color: #4f6ce9;
+  padding: 0.4em 1.4em;
+  font-size: 16px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #b3c1ff,
+              -6px -6px 12px #b3c1ff;
+  position: relative;
+  z-index: 99;
+ }
+ 
+ .upload:hover {
+  /* border: 1px solid white; */
+ }
+ 
+ .upload:active {
+  box-shadow: 4px 4px 12px #c5c5c5,
+              -4px -4px 12px #ffffff;
+ }
+ .tip{
+   margin: 0 20px 0px 20px;
+   font-size: 12px;
+   color: #4f6ce9;
+ }
+ .dialog_box>image{
+  height: 70px;
+  width: 60px;
+ }

@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "components/loading"
+  ],
+  "window": {
+    "backgroundColor": "#E9ECFA",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#E9ECFA",
+    "navigationBarTitleText": "压缩兔🐰",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "style": "v2"
+}
