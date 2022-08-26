@@ -1,8 +1,9 @@
 // pages/index/index.js
 // 获取应用实例
 require('../utils/wasm_exec'); // 胶水代码
-const app = getApp()
-const wasm_url = "/pages/utils/iamgeCompress.wasm.br"
+// const app = getApp()
+const wasm_url = "/pages/utils/iamgeCompress2.wasm.br"
+// const wasm_url = "/pages/utils/tmp.wasm"
 Page({
   data: {
     fileSrc:'',
