@@ -10,7 +10,7 @@ Page({
     test_result1:'0',
     upload_bg_url:'../../images/upload.png',
     loading_img:'',
-
+    access_token:'',
     dialogvisible: false,
     inputs: [{
       text: '弹窗标题：',
@@ -56,7 +56,11 @@ Page({
   },
 	async onReady() {
 		global.console = console
-		await this.initGo()
+    await this.initGo()
+    
+  },
+  onLoad:function(){
+    this.getAccessTokenFun()
   },
   async initGo() {
     const go = new global.Go();
@@ -110,6 +114,7 @@ Page({
         const arryFex = tempFilePath.tempFilePath.split('.')
         const suffix = arryFex[1] || ''
         console.log(tempFilePath,arryFex,'====')
+        this.media_check(tempFilePath.tempFilePath)
         this.setData({
           loading_img:tempFilePath.tempFilePath
         })
@@ -226,6 +231,49 @@ Page({
         console.log(err)
       }
     })
+  },
+  // 获取getAccessToken c9c9187d9de8c2c4b23ed3af41d867cf
+  getAccessTokenFun: function(){
+    wx.request({
+      url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxae809fd9b0d76ad5&secret=c9c9187d9de8c2c4b23ed3af41d867cf', 
+      method: 'get', 
+      success: (res)=>{ 
+        const {access_token} = res.data || {}
+        this.data.access_token = access_token
+        console.log('success',res)
+      }, 
+      fail: (res)=>{ 
+        console.log('fail',res)
+      }, 
+    })
+  },
+  // 检测
+  media_check:function(img_url){
+    console.log(this.data.access_token)
+    return new Promise((resolve, reject)=>{
+      wx.request({
+        url: 'https://api.weixin.qq.com/wxa/media_check_async?access_token='+this.data.access_token, 
+        method: 'post', 
+        data:{
+          media_type:2,//1:音频;2:图片
+          media_url:img_url,
+          version:2,
+          scene:'1',
+          openid:'wxae809fd9b0d76ad5'
+        },
+        success: (res)=>{ 
+          const {access_token} = res.data || {}
+          this.data.access_token = access_token
+          resolve(res)
+          console.log('success',res)
+        }, 
+        fail: (res)=>{ 
+          reject(res)
+          console.log('fail',res)
+        }, 
+      })
+    })
+
   },
   showDialog: function() {
     this.setData({

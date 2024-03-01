@@ -1,4 +1,7 @@
 /* pages/index/index.wxss */
+.box{
+  background-color: #E9ECFA;
+}
 .bg_img{
   width: 100%;
   margin: 0 auto;
